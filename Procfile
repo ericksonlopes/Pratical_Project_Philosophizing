@@ -1,1 +1,1 @@
-web: guinicorn philosophizing.wsgi --log-file -
+web: gunicorn philosophizing.wsgi --log-file -
