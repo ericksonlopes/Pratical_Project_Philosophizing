@@ -76,17 +76,17 @@ WSGI_APPLICATION = 'philosophizing.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # philosophizing
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-DATABASES = {
-    'default': dj_database_url.config()
-}
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
 
 
 # Password validation
@@ -140,6 +140,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # redirecinar usuario após fazer logout
 LOGOUT_REDIRECT_URL = 'home'
 
+STATICFILES_DIR = {
+    'static',
+}
 
 AWS_ACCESS_KEY_ID = 'AKIAZHO7T5JXWPF6DHNC'
 AWS_SECRET_ACCESS_KEY = '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'
