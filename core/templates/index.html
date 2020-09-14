@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Caminar by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Filosofando</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="https://www.linkedin.com/in/ericksonlopesdev/" target="_blank">Filosofando <span>by Erickson Lopes</span></a></div>
+			</header>
+
+		<!-- Main -->
+			<section id="main">
+				<div class="inner">
+
+				<!-- One -->
+					<section id="one" class="wrapper style1">
+
+						<div class="image fit flush">
+							<img src="{% static 'images/pic02.png' %}" alt="" />
+						</div>
+						<header class="special">
+							<h2>O que é Filosofia ?</h2>
+							<p>Uma pequena introdução</p>
+						</header>
+						<div class="content">
+							<p>Não é possível apresentar uma resposta pronta, definitiva e última para a pergunta sobre a essência da Filosofia. O que apresentaremos aqui será uma tentativa de resposta genérica, mas que não deixa de partir de determinados pontos de vista que podem ser aplicados em determinadas circunstâncias.</p>
+							<p>A filosofia pode ser apresentada como um campo do conhecimento que estuda a existência humana e o saber por meio da análise racional. Do grego, o termo filosofia significa “amor ao conhecimento”.</p>
+							<p>Segundo o filósofo Gilles Deleuze (1925-1995), a filosofia é a disciplina responsável pela criação de conceitos.</p>
+						</div>
+					</section>
+
+<!--				&lt;!&ndash; Two &ndash;&gt;-->
+<!--					<section id="two" class="wrapper style2">-->
+<!--						<header>-->
+<!--							<h2>Vestibulum Convallis</h2>-->
+<!--							<p>vehicula urna sed justo bibendum</p>-->
+<!--						</header>-->
+<!--						<div class="content">-->
+<!--							<div class="gallery">-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="{% static 'images/pic03.jpg' %}"><img src="{% static 'images/pic03.jpg' %}" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="{% static 'images/pic01.jpg' %}"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="{% static 'images/pic04.jpg' %}"><img src="{% static 'images/pic04.jpg' %}" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="{% static 'images/pic05.jpg' %}"><img src="{% static 'images/pic05.jpg' %}" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</section>-->
+
+				<!-- Three -->
+					{% include 'phrases.html' %}
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html' %}
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

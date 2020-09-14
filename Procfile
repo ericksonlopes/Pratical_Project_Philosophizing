@@ -1,0 +1,1 @@
+web: guinicorn philosophizing.wsgi --log-file -

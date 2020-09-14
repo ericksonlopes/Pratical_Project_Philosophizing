@@ -1,0 +1,13 @@
+{% load static %}
+<section id="three" class="wrapper">
+    {% for item in phrases %}
+        <div class="spotlight">
+            <div class="image flush"><img src="{{ item.imagem.thumb.url }}" alt="{{ item.nome }}" /></div>
+            <div class="inner">
+                <h3>{{ item.name }}</h3>
+                <h5><blockquote>{{ item.phrase }}</blockquote></h5>
+                <h6>{{ item.created_at }}</h6>
+            </div>
+        </div>
+    {% endfor %}
+</section>
