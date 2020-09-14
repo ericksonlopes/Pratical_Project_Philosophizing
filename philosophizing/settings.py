@@ -16,7 +16,6 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -71,7 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'philosophizing.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -87,7 +85,6 @@ else:
     DATABASES = {
         'default': dj_database_url.config()
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -107,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -120,7 +116,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -140,9 +135,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # redirecinar usuario após fazer logout
 LOGOUT_REDIRECT_URL = 'home'
 
-STATICFILES_DIR = {
-    'static',
-}
+# STATICFILES_DIR = [
+#     os.path.join(BASE_DIR, 'core/static'),
+# ]
+# AWS_ACCESS_KEY_ID = 'AKIAZHO7T5JXWPF6DHNC'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'django'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
+#
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_ACCESS_KEY_ID = 'AKIAZHO7T5JXWPF6DHNC'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -153,6 +160,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_LOCATION = 'static'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'core/static'),
+]
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
